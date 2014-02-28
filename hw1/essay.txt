@@ -1,0 +1,31 @@
+Please write your answers to the essay questions in this file.
+
+#Answer for Q1:
+In the homework assignment, token-based ngram models won't perform better compared to charactor based n-grams.
+The reason is :
+	It is very difficult to do token-based ngram for url such as www.nevadagolfnetwork.com, if you use '.' to split 
+    the url to get tokens, then 'nevadagolfnetwork' will appear in the ngram model, it is very unusual word which is 
+	composed of several words. But if we want to split nevadagolfnetwork further , then we need to have a dictionary 
+	to guess the possible word composition for it , e.g. for such word ATSports, we need to guess the word composition 
+	for its	category, but we cannot determine whether the token should be ATS(American Thoracic Society) and ports, or 
+	should be at and sports. The file in the assignment to build our model is small, English words vacabulary size is 
+	about one million ,	and for tokenize problem , we may get some unusual words which may composed by several word or
+	some company names, it will enlarge the vacabulary size further. So if we build a token based ngram model by this file,
+	many word model may appear only once,then it is difficult to estimate new url category except those from the same domain
+	names, which appear many times in our url file list for building ngram model.
+	
+To implement a token-based ngram system, for an URL such as http://www.cnn.com/US/9806/22/hot.hot.hot/video.html is easy to tokenize,
+remove http:// , and replace the special charactor such as '/' and '.' with ' ', so we can get the ngram to build model. We may get 
+the ngram as:
+www  cnn  com  us  9806  22  hot  video  html
+But for the url such as http://www.bakersfieldstreetracing.com/ is difficult to tokenize.
+
+#Answer for Q2:
+If we provide more date for each category to build the language models, then the result would be much more accurate. We can imagine that
+if we can provide all the data for each category , then of course the result would be 100% accurate as every data is in the build list, 
+if we only missed serveral data for category , the accuracy will be approached to 100%. As more data we can get equally for the LM , 
+the unseen data will become smaller and smaller, the result will be more accurate.
+If we provide more data only for Arts, and the add-one smoothing represent uniform distribution in the distribution of occurrence of events, 
+but now they are no longer uniform distribution as more data for arts, it modified the possibility of arts more. Use maths method:
+(DEPENDS ON THE SITUATION IT MAY BECOME SMALLER OR LARGER POSSIBILITY ON THISSSS...............
+
